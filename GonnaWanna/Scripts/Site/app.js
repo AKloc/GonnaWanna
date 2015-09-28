@@ -1,7 +1,7 @@
-﻿var gottaHaveItApp = angular.module('gottaHaveItApp', ['ui.router']);
+﻿var gonnaWannaApp = angular.module('gonnaWannaApp', ['ui.router']);
 
 // Configure routes...
-gottaHaveItApp.config(function ($stateProvider, $urlRouterProvider) {
+gonnaWannaApp.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/home');
 
     $stateProvider
@@ -54,7 +54,7 @@ gottaHaveItApp.config(function ($stateProvider, $urlRouterProvider) {
 
 
 // Need to know about all of the events and channels JUST FOR COUNTS. Also add a function to allow page "redirects" from the search bar and button.
-gottaHaveItApp.controller('NavBarController', function ($scope, $http, $location) {
+gonnaWannaApp.controller('NavBarController', function ($scope, $http, $location) {
     $scope.ChangeRoute = function (newPath) {
         $location.path(newPath);
     };
@@ -68,19 +68,19 @@ gottaHaveItApp.controller('NavBarController', function ($scope, $http, $location
     });
 });
 
-gottaHaveItApp.controller('HomeController', function ($scope, $http, $location) {    
+gonnaWannaApp.controller('HomeController', function ($scope, $http, $location) {    
     $http.get("/api/events").success(function (data) {
         $scope.Events = data;
     });
 });
 
-gottaHaveItApp.controller('EventsController', function ($scope, $http) {
+gonnaWannaApp.controller('EventsController', function ($scope, $http) {
     $http.get("/api/events").success(function (data) {
         $scope.Events = data;
     });
 });
 
-gottaHaveItApp.controller('EventDetailsController', function ($scope, $http, $stateParams) {
+gonnaWannaApp.controller('EventDetailsController', function ($scope, $http, $stateParams) {
     var eventID = $stateParams.eventID;
 
     $http.get("/api/events/" + eventID).success(function (data) {
@@ -88,13 +88,13 @@ gottaHaveItApp.controller('EventDetailsController', function ($scope, $http, $st
     });
 });
 
-gottaHaveItApp.controller('ChannelsController', function ($scope, $http) {
+gonnaWannaApp.controller('ChannelsController', function ($scope, $http) {
     $http.get("/api/channels").success(function (data) {
         $scope.Channels = data;
     });
 });
 
-gottaHaveItApp.controller('ChannelDetailsController', function ($scope, $http, $stateParams) {
+gonnaWannaApp.controller('ChannelDetailsController', function ($scope, $http, $stateParams) {
     var channelID = $stateParams.channelID;
 
     $http.get("/api/channels/" + channelID).success(function (data) {
@@ -102,13 +102,13 @@ gottaHaveItApp.controller('ChannelDetailsController', function ($scope, $http, $
     });
 });
 
-gottaHaveItApp.controller('LocationsController', function ($scope, $http) {
+gonnaWannaApp.controller('LocationsController', function ($scope, $http) {
     $http.get("/api/locations").success(function (data) {
         $scope.Locations = data;
     });
 });
 
-gottaHaveItApp.controller('LocationDetailsController', function ($scope, $http, $stateParams) {
+gonnaWannaApp.controller('LocationDetailsController', function ($scope, $http, $stateParams) {
     var locationID = $stateParams.locationID;
 
     $http.get("/api/locations/" + locationID).success(function (data) {
@@ -116,7 +116,7 @@ gottaHaveItApp.controller('LocationDetailsController', function ($scope, $http, 
     });
 });
 
-gottaHaveItApp.controller('SearchController', function ($scope, $http, $stateParams) {
+gonnaWannaApp.controller('SearchController', function ($scope, $http, $stateParams) {
     var searchQuery = $stateParams.searchQuery;
 
     $http.get("/api/search/" + searchQuery).success(function (data) {
@@ -124,7 +124,7 @@ gottaHaveItApp.controller('SearchController', function ($scope, $http, $statePar
     });
 });
 
-gottaHaveItApp.controller('SearchControllerDetails', function ($scope, $http, $stateParams) {
+gonnaWannaApp.controller('SearchControllerDetails', function ($scope, $http, $stateParams) {
 
     var check = $stateParams.searchQuery;
 
