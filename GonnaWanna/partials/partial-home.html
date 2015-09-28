@@ -1,0 +1,34 @@
+﻿<ol class="breadcrumb">
+    <li class="active">Home</li>
+</ol>
+<div class="jumbotron">
+    <h1>What's "Gotta Have it?"</h1>
+    <p>Gotta Have It keeps you updated on all of the events happening in your area that you're interested in. You can: </p>
+    <ul class="bodyFont">
+        <li>Search for events</li>
+        <li>Subscribe to channels from your favorite event publishers</li>
+        <li>Use our phone app to subscribe to events or channels using your device's camera</li>
+    </ul>
+    <p>Never miss a cool event again!</p>
+    
+</div>
+
+<p class="bodyFont">Here are some popular events coming up in your area:</p>
+
+<div class="row">
+    <div class="col-sm-6 col-md-4" ng-repeat="event in Events">
+        <div class="thumbnail">
+            <img src="{{event.ImageUrl}}" alt="{{event.Name}}" class="img-rounded" style="max-width:200px;max-height:200px;">
+            <div>
+                <h3>{{event.Name}}</h3>
+                <div>{{event.Description}}</div>
+                <p>
+                    <a href="#/events/{{event.ID}}" class="btn btn-primary" role="button" style="width:100%">Learn more about this event</a>
+                    <br />
+                    <a href="#/locations/{{event.LocationID}}" class="btn btn-default" role="button" style="width:100%">More from {{event.Location.Name}}</a>
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
