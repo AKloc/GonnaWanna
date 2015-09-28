@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Data.Entity;
 using GonnaWanna.Models;
+using System.Data.Entity.Validation;
 
 namespace GonnaWanna.Controllers
 {
@@ -21,6 +22,7 @@ namespace GonnaWanna.Controllers
                     .Include(c => c.ChannelMemberships.Select(cm => cm.Event))
                     //.Include(e => e.)
                     .ToList();
+
 
                 return Ok(query);
             }

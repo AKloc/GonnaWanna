@@ -35,10 +35,12 @@ namespace GonnaWanna
             PublicClientId = "self";
             OAuthOptions = new OAuthAuthorizationServerOptions
             {
+                // This is the API path to get the token
                 TokenEndpointPath = new PathString("/Token"),
                 Provider = new ApplicationOAuthProvider(PublicClientId),
                 AuthorizeEndpointPath = new PathString("/api/Account/ExternalLogin"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
+                
                 // In production mode set AllowInsecureHttp = false
                 AllowInsecureHttp = true
             };
@@ -55,9 +57,9 @@ namespace GonnaWanna
             //    consumerKey: "",
             //    consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //    appId: "",
-            //    appSecret: "");
+            app.UseFacebookAuthentication(
+                appId: "1705046186396342",
+                appSecret: "a3616f24e9704ef00b12db134bd20516");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

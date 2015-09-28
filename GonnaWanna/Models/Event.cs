@@ -15,7 +15,10 @@ namespace GonnaWanna.Models
         public string ImageUrl { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime? EndDate { get; set; }
-        public DateTime? LastEditted { get; set; }
+        public string CreatedByUser { get; set; }
+        public DateTime? CreatedByUserOnDate { get; set; }        
+        public string LastEdditedByUser { get; set; }
+        public DateTime? LastEdittedByUserOnDate { get; set; }
         public bool IsActive { get; set; }
 
         public virtual Location Location { get; set; }

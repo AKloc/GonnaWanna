@@ -12,8 +12,10 @@ namespace GonnaWanna.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public string ImageUrl { get; set; }
-        public DateTime? DateCreated { get; set; }
-        public DateTime? LastEditted { get; set; }
+        public string CreatedByUser { get; set; }
+        public DateTime? CreatedByUserOnDate { get; set; }
+        public string LastEdditedByUser { get; set; }
+        public DateTime? LastEdittedByUserOnDate { get; set; }
         public bool IsActive { get; set; }
 
         //public virtual ICollection<Event> Events { get; set; }

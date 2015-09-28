@@ -34,6 +34,16 @@ namespace GonnaWanna.Models
 
     public class RegisterBindingModel
     {
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
+        [Required]
+        [Display(Name = "UserName")]
+        public string UserName { get; set; }
+
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }

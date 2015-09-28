@@ -16,7 +16,7 @@ namespace GonnaWanna.Contexts
         {
             this.context = context;
 
-            //SeedUsers();
+            SeedApplicationUsers();
             
             SeedLocations();
 
@@ -26,6 +26,18 @@ namespace GonnaWanna.Contexts
 
             SeedChannelMemberships();
 
+        }
+
+        protected void SeedApplicationUsers()
+        {
+            //var users = context.Users;
+            var applicationUsers = new List<ApplicationUser>
+            {
+                new ApplicationUser {UserName="Admin", Email="aaa@aa.com" }
+            };
+
+            applicationUsers.ForEach(a => { context.Users.Add(a); });
+            context.SaveChanges();
         }
 
 
@@ -146,33 +158,33 @@ namespace GonnaWanna.Contexts
                     Name = "Fund Raisers",
                     Description = "This channel contains all of Clarence High School's fund raising activities. Subscribe and help keep our school at the top!",
                     ImageUrl = "http://www.clarenceschools.org/cms/lib/NY01913587/Centricity/Template/GlobalAssets/images///Logo/CCSD-Logo-color-no-circle-h-137px.png",
-                    DateCreated = DateTime.Now
+                    CreatedByUserOnDate = DateTime.Now
                 },
                 new Channel
                 {
                     Name = "Buffalo Sabres Home Games",
                     Description = "Never miss a home Sabres game!",
                     ImageUrl = "http://www.nhlhockeyarenas.com/images/Buffalo-Sabres-Logo.gif",
-                    DateCreated = DateTime.Now
+                    CreatedByUserOnDate = DateTime.Now
                 },
                 new Channel
                 {
                     Name = "Buffalo Bandits Home Games",
                     Description = "Never miss a home Bandits game!",
                     ImageUrl = "http://www.brandsoftheworld.com/sites/default/files/styles/logo-thumbnail/public/0024/6268/brand.gif?itok=rHSarLBk",
-                    DateCreated = DateTime.Now
+                    CreatedByUserOnDate = DateTime.Now
                 },
                 new Channel
                 {
                     Name = "Sabres and Bandits Home Games",
                     Description = "Never miss a game from either the Bills or Bandits!",
-                    DateCreated = DateTime.Now
+                    CreatedByUserOnDate = DateTime.Now
                 },
                 new Channel
                 {
                     Name = "Buffalo Concerts",
                     Description = "We track all of the big acts so that you won't have to.",
-                    DateCreated = DateTime.Now
+                    CreatedByUserOnDate = DateTime.Now
                 }
             };
 

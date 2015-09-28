@@ -46,6 +46,11 @@ gonnaWannaApp.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: '/partials/partial-search.html',
             controller: 'SearchController'
         })
+        .state('register', {
+            url: '/register',
+            templateUrl: '/partials/partial-register.html',
+            controller: 'AccountController'
+        })
         .state('about', {
             url: '/about',
             templateUrl: 'partials/partial-about.html'
@@ -124,11 +129,26 @@ gonnaWannaApp.controller('SearchController', function ($scope, $http, $statePara
     });
 });
 
-gonnaWannaApp.controller('SearchControllerDetails', function ($scope, $http, $stateParams) {
 
-    var check = $stateParams.searchQuery;
+gonnaWannaApp.controller('AccountController', function ($scope, $http, $stateParams) {
+    
+    var viewModel = this;
+    $scope.viewModel = this;
+    viewModel.isLoggedIn = false;
+    viewModel.isRegistered = false;
+    viewModel.UserData =
+        {
+            FirstName: "testFirstName",
+            LastName: "testLastName",
+            Email: "test@email.com",
+            UserName: "testUserName",
+            Password: "Pass_1",
+            ConfirmPassword: "Pass_1",
+        };
 
-    $http.get("/api/search").success(function (data) {
-        $scope.SearchResults = data;
-    });
+    viewModel.RegisterUser = function () {
+        $http.post("/api/account/register", viewModel.UserData).success(function (data) {
+            $scope.returnData = data;
+        });
+    }
 });
