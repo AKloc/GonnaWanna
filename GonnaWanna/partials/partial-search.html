@@ -12,6 +12,7 @@
                 <th>Description</th>
                 <th>Event Date</th>
                 <th>Location</th>
+                <th>Options</th>
             </tr>
         </thead>
         <tbody>
@@ -20,6 +21,7 @@
                 <td>{{eventResult.Description}}</td>
                 <td>{{eventResult.StartDate | date:'short'}}</td>
                 <td><a href="#/locations/{{eventResult.Location.ID}}">{{eventResult.Location.Name}}</a></td>
+                <td><button type="button" class="btn btn-success">Subscribe</button></td>
             </tr>
         </tbody>
     </table>
@@ -37,12 +39,14 @@
             <tr>
                 <th>Channel Name</th>
                 <th>Description</th>
+                <th>Options</th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="channelResult in SearchResults.channelResults">
                 <td><b><a href="#/channels/{{channelResult.ID}}">{{channelResult.Name}}</a></b></td>
                 <td>{{channelResult.Description}}</td>
+                <td><button type="button" class="btn btn-success">Subscribe</button></td>
             </tr>
         </tbody>
     </table>
