@@ -8,11 +8,11 @@ using GonnaWanna.Models;
 namespace GonnaWanna.Contexts
 {
     //Seed the database. Only drop the database if the model has changed, though.
-    class DatabaseInitializer : System.Data.Entity.DropCreateDatabaseAlways<GottaHaveItContext>//DropCreateDatabaseIfModelChanges<GottaHaveItContext>
+    class DatabaseInitializer : System.Data.Entity.DropCreateDatabaseAlways<GonnaWannaContext>//DropCreateDatabaseIfModelChanges<GonnaWannaContext>
     {
-        protected GottaHaveItContext context;
+        protected GonnaWannaContext context;
 
-        protected override void Seed(GottaHaveItContext context)
+        protected override void Seed(GonnaWannaContext context)
         {
             this.context = context;
 

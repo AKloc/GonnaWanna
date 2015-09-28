@@ -4,11 +4,17 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace GonnaWanna.Contexts
 {
-    class GottaHaveItContext : DbContext
+    class GonnaWannaContext : DbContext
     {
-        public GottaHaveItContext() : base("GottaHaveItContextDBConnection")
+        public GonnaWannaContext() : base("GonnaWannaContextDBConnection")
         {
             //Do nothing, just pass in the database connection to the DbContext parent class.
+        }
+
+
+        public static GonnaWannaContext Create()
+        {
+            return new GonnaWannaContext();
         }
 
         public DbSet<Event> Events { get; set; }

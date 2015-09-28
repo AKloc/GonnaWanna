@@ -15,7 +15,7 @@ namespace GonnaWanna.Controllers
         [Route("api/channels/")]
         public IHttpActionResult Get()
         {
-            using (Contexts.GottaHaveItContext ctx = new Contexts.GottaHaveItContext())
+            using (Contexts.GonnaWannaContext ctx = new Contexts.GonnaWannaContext())
             {
                 var query = ctx.Channels
                     .Include(c => c.ChannelMemberships.Select(cm => cm.Event))
@@ -31,7 +31,7 @@ namespace GonnaWanna.Controllers
         [Route("api/channels/{id}")]
         public IHttpActionResult Get(int id)
         {
-            using (Contexts.GottaHaveItContext ctx = new Contexts.GottaHaveItContext())
+            using (Contexts.GonnaWannaContext ctx = new Contexts.GonnaWannaContext())
             {
                 
                 var query = ctx.Channels

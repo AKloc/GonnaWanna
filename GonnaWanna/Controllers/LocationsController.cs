@@ -15,7 +15,7 @@ namespace GonnaWanna.Controllers
         [Route("api/locations/")]
         public IHttpActionResult Get()
         {
-            using (Contexts.GottaHaveItContext ctx = new Contexts.GottaHaveItContext())
+            using (Contexts.GonnaWannaContext ctx = new Contexts.GonnaWannaContext())
             {
                 var query = ctx.Locations
                     .Include(l => l.Events)
@@ -31,7 +31,7 @@ namespace GonnaWanna.Controllers
         [Route("api/locations/{id}")]
         public IHttpActionResult Get(int id)
         {
-            using (Contexts.GottaHaveItContext ctx = new Contexts.GottaHaveItContext())
+            using (Contexts.GonnaWannaContext ctx = new Contexts.GonnaWannaContext())
             {
                 var query = ctx.Locations
                 .Include(l => l.Events)

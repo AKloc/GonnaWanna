@@ -17,7 +17,7 @@ namespace GonnaWanna.Controllers
         public IHttpActionResult Get(string searchQuery)
         {
             //return events;
-            using (Contexts.GottaHaveItContext ctx = new Contexts.GottaHaveItContext())
+            using (Contexts.GonnaWannaContext ctx = new Contexts.GonnaWannaContext())
             {
                 var eventQuery = ctx.Events
                     .Where(e => e.Description.Contains(searchQuery) || e.Name.Contains(searchQuery))
@@ -47,7 +47,7 @@ namespace GonnaWanna.Controllers
         public IHttpActionResult Get()
         {
             //return events;
-            using (Contexts.GottaHaveItContext ctx = new Contexts.GottaHaveItContext())
+            using (Contexts.GonnaWannaContext ctx = new Contexts.GonnaWannaContext())
             {
                 var query = ctx.Events
                     .Include(e => e.Location)
