@@ -3,6 +3,12 @@
     <li class="active">Register</li>
 </ol>
 
+<div ng-hide="ItWorked">
+    <h1>NOT WORKING YET.</h1>
+</div>
+<div ng-show="ItWorked">
+    <h1>IT WORKED.</h1>
+</div>
 
 Register here
 
@@ -34,5 +40,24 @@ Register here
             class="btn btn-default"
             ng-click="viewModel.RegisterUser()">
         Register
+    </button>
+</form>
+
+
+<form ng-hide="viewModel.isLoggedIn">
+    <input type="text"
+           class="form-control"
+           placeholder="User Name"
+           ng-model="viewModel.UserData.UserName" />
+
+    <input type="password"
+           class="form-control"
+           placeholder="Password"
+           ng-model="viewModel.UserData.Password" />
+
+    <button type="submit"
+            class="btn btn-default"
+            ng-click="viewModel.LoginUser()">
+        Login
     </button>
 </form>
