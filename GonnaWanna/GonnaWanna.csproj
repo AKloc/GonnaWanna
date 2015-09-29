@@ -1073,6 +1073,8 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\Site\app.js" />
+    <Content Include="Scripts\Site\controllers.js" />
+    <Content Include="Scripts\Site\factories.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
